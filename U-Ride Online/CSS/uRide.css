@@ -1,0 +1,112 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/*LEVEL 0*/
+#map {
+  height: 100%;
+  z-index: 0;
+  background-color:blue;
+}
+
+/*LEVEL 1*/
+#homeBar{
+  display:none;
+  z-index: 1;
+  position:absolute;
+  top:0;
+  left:0;
+
+  background-color:#75d0ff;
+  opacity:0.90;
+  width:100%;
+  height:13%;
+  text-align:center;
+}
+
+#homeBarLogo{
+  display:inline-block;
+  height:90%;
+  opacity:100%;
+}
+
+/*LEVEL 2*/
+
+#homeIcon{
+  position: relative;
+  width: 50%;
+  height: 50%;
+  left:25%;
+}
+
+#homeButton{
+  display: none;
+  z-index: 2;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, 0)
+}
+
+/*LEVEL 3*/
+
+#greyMask{
+  display:none;
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.70;
+}
+
+/*LEVEL 4*/
+#buttonGround{
+  display:none;
+  z-index: 4;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 45%;
+  width: 100%;
+  background-color: #E8E7EC;
+  opacity: 1;
+}
+
+/*LEVEL 5*/
+#buttonBox{
+  display:none;
+  z-index: 5;
+  position:absolute;
+  bottom:0%;
+  width:100%;
+  height:45%;
+}
+
+.options{
+  position:relative;
+  width:100%;
+  height:19%;
+  margin-top:1px;
+  background-color: white;
+}
+
+.options p{
+  font-size: 0.9rem;
+  font-family: Georgia, serif;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+#Cancel{
+  margin-top:1%;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <title>U-Ride Online</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="JS/mapAPI.js"></script>
+  <script src="JS/scale.js"></script>
+  <script src="JS/effect.js"></script>
+  <script src="JS/displayControl.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="CSS/uRide.css">
+
+</head>
+<body>
+
+  <!-- Layer 0 : Google Map -->
+  <div id="map">
+  </div>
+
+  <!-- Layer 1 : Main UI -->
+  <div id="homeBar">
+    <img id="homeBarLogo" src="Graphics/png/logo.png">
+  </div>
+
+  <!-- Layer 2 : Home Button -->
+  <div id="homeButton">
+    <img id="homeIcon" src="Graphics\png\button.png">
+  </div>
+
+  <!-- Layer 3 : Grey Mask -->
+  <div id="greyMask">
+  </div>
+
+  <!-- Layer 4 : Button Ground -->
+  <div id="buttonGround">
+  </div>
+
+  <!-- Layer 5 : Buttons -->
+  <div id="buttonBox">
+    <div id="getRideButton" class="options">
+      <p>
+        Get A Ride
+      </p>
+    </div>
+    <div id="giveRideButton" class="options">
+      <p>
+        Give A Ride
+      </p>
+    </div>
+    <div id="myProfileButton" class="options">
+      <p>
+        My Profile
+      </p>
+    </div>
+    <div id="aboutButton" class="options">
+      <p>
+        About
+      </p>
+    </div>
+    <div id="Cancel" class="options">
+      <p>
+        Cancel
+      </p>
+    </div>
+  </div>
+
+  <!-- Layer 6 : Panels -->
+
+  <!-- Layer 7 : Panel Buttons & controls -->
+
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsJOmPr7qbSohN1uG5urKuZQ4SxX2T7Vo&callback=initMap">
+</script>
+
+</body>
+</html>
