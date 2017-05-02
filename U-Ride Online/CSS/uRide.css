@@ -110,3 +110,172 @@ html, body {
 #Cancel{
   margin-top:1%;
 }
+
+#getRidePanel{
+  display:none;
+  z-index:6;
+  position: absolute;
+  top:13%;
+  height:20%;
+  background-color:#75d0ff;
+  opacity:0.90;
+  width:100%;
+}
+
+.inputField{
+  position: relative;
+  top:0;
+  left:0;
+  height:33.3%;
+  width:100%;
+}
+
+.inputFieldText{
+  position: absolute;
+  top:0;
+  left:0;
+  width:20%;
+  height:100%;
+}
+
+.inputFieldTextBox{
+  position: absolute;
+  top:0;
+  right:10%;
+  width:70%;
+  height:100%;
+}
+
+.inputField p{
+  font-size: 0.9rem;
+  font-family: Georgia, serif;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.inputField input{
+  font-size: 0.9rem;
+  font-family: Georgia, serif;
+  width:100%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  text-align:center;
+}
+
+#getSearch{
+  background-color: #47fc23;
+  width:50%;
+  height:90%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  text-align:center;
+}
+
+#getSearch p{
+  color: white;
+  font-size:1.2rem;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  text-align:center;
+}
+
+#getRideDriverPanel{
+  display:none;
+  z-index:6;
+  position: absolute;
+  bottom:5%;
+  left:5%;
+  background-color:#75d0ff;
+  opacity:0.80;
+  width:90%;
+  height:25%;
+}
+
+#getRideDriverImage{
+  position: absolute;
+  top:0%;
+  left:0%;
+  width:30%;
+  height:80%;
+}
+#getRideDriverInfo{
+  position: absolute;
+  font-size:0.7rem;
+  top:0%;
+  right:0%;
+  width:60%;
+  height:80%;
+}
+#getRideDriverButtons{
+  position: absolute;
+  bottom:0%;
+  left:0%;
+  width:100%;
+  height:20%;
+  background-color: green;
+}
+#getRideDriverAccept{
+  position: absolute;
+  width:33.3%;
+  height:100%;
+  left:0;
+  background-color: #47fc23;
+}
+#getRideDriverNext{
+  position: absolute;
+  width:33.3%;
+  height:100%;
+  left:33.3%;
+  background-color: #BBBBBB;
+}
+#getRideDriverQuit{
+  position: absolute;
+  width:33.3%;
+  height:100%;
+  left:66.6%;
+  background-color: #FF8888;
+}
+#getRideDriverButtons div p{
+  color: white;
+  font-size:1rem;
+  position: absolute;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -80%);
+  text-align:center;
+}
+#getRiderDriverImagePic{
+  height:100%;
+  width:auto;
+}
+
+
+#successInfo{
+  z-index:7;
+  font-size:0.7rem;
+  position:absolute;
+  top:0%;
+  left:0%;
+  display:none;
+  height:3%;
+  width:100%;
+  background-color:#5df21c;
+  opacity:0.90;
+  text-align:center;
+}

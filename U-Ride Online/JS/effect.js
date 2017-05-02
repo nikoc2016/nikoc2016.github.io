@@ -29,4 +29,28 @@ $(document).ready(function(){
 		$(this).css({'backgroundColor':"#FFFFFF"});
 	});
 
+	//BUTTONS ONPRESS HOOK
+	$("#getSearch").mousedown(function() {
+		$(this).css({'backgroundColor':"#AAffAA"});
+	}).mouseup(function() {
+		$(this).css({'backgroundColor':"#47fc23"});
+	});
+
+	//BUTTONS HOVER HOOK
+	$("#getSearch").mouseenter(function() {
+		$(this).css({'backgroundColor':"#AAffAA"});
+	}).mouseleave(function() {
+		$(this).css({'backgroundColor':"#47fc23"});
+	});
+
 });
+
+function pushInfo(isGood,srcstr){
+	if (isGood)
+		$("#successInfo").css({"backgroundColor":"#5df21c"});
+	else
+		$("#successInfo").css({"backgroundColor":"#edd041"});
+
+	$("#successInfo").html(srcstr);
+	$("#successInfo").slideDown("slow").delay(2500).slideUp("slow");
+}
