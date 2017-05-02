@@ -67,6 +67,7 @@ function clearMarkers(){
 
 function drawPath(fromDest, toDest){
 	if (fromDest != "" && toDest != "") {
+    clearMarkers();
 		directionsService.route({
 			origin: fromDest,
 			destination: toDest,
@@ -76,9 +77,9 @@ function drawPath(fromDest, toDest){
 				directionsDisplay.setDirections(response);
 				travelDistance = response.routes[0].legs[0].distance.value;
 				pushInfo(true, "Distance: " + travelDistance + " Meters");
-				refreshDriverInfo();
+				getRideDriverHandle(1);
 			} else {
-				$("#getRideDriverPanel").fadeOut("fast")
+				getRideDriverHandle(0);
 				pushInfo(false, 'Directions request failed due to ' + status);
 			}
 		});

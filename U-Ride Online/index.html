@@ -2,16 +2,20 @@
 <html>
 <head>
 
+<!-- META -->
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta charset="utf-8">
   <title>U-Ride Online</title>
 
+<!-- JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="JS/mapAPI.js"></script>
-  <script src="JS/scale.js"></script>
-  <script src="JS/effect.js"></script>
-  <script src="JS/displayControl.js"></script>
+  <script src="JS/buttonDef.js"></script>
+  <script src="JS/buttonEffect.js"></script>
+  <script src="JS/UIhandles.js"></script>
+  <script src="JS/UIscale.js"></script>
 
+<!-- CSS -->
   <link rel="stylesheet" type="text/css" href="CSS/uRide.css">
 
 </head>
@@ -69,6 +73,8 @@
   </div>
 
   <!-- Layer 6 : Panels -->
+
+  <!-- Get Ride Panel -->
   <div id="getRidePanel">
     <div id="fromField" class="inputField">
       <div class="inputFieldText">
@@ -95,6 +101,7 @@
     </div>
   </div>
 
+  <!-- Get Ride Driver Panel -->
   <div id="getRideDriverPanel">
     <div id="getRideDriverImage">
       <img id="getRiderDriverImagePic">
