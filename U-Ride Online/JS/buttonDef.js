@@ -186,4 +186,12 @@ $(document).ready(function(){
 		loginHandle(1);
 	});
 
+	//Global Cancel
+	$("#globalCancelButton").mousedown(function() {
+		$("#globalCancelButton").fadeOut();
+		mainUIhandle(2);
+		getRideHandle(0);
+		giveRideHandle(0);
+	})
+
 });

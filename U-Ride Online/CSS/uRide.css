@@ -577,3 +577,28 @@ html, body {
 #loginButton:hover{
   color:white;
 }
+
+#globalCancelButton{
+  display:none;
+  z-index: 7;
+  position:absolute;
+  bottom:10%;
+  width:50%;
+  height:9%;
+  background-color:#75d0ff;
+  opacity:0.90;
+  color:white;
+  font-size:2rem;
+  text-align:center;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, 0%);
+}
+
+#globalCancelButton p{
+  position:absolute;
+  margin:0px;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, 0%);
+}

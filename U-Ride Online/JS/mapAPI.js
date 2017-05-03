@@ -78,6 +78,7 @@ function drawPath(fromDest, toDest, isGet){
 				directionsDisplay.setDirections(response);
 				travelDistance = response.routes[0].legs[0].distance.value;
 				pushInfo(true, "Distance: " + travelDistance + " Meters");
+        $("#globalCancelButton").fadeOut();
         if (isGet)
 				  getRideDriverHandle(1);
         else

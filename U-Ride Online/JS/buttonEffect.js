@@ -43,6 +43,19 @@ $(document).ready(function(){
 		$(this).css({'backgroundColor':"#47fc23"});
 	});
 
+	//BUTTONS HOVER HOOK
+	$("#globalCancelButton").mouseenter(function() {
+		$(this).css({'backgroundColor':"#9fe5ff"});
+	}).mouseleave(function() {
+		$(this).css({'backgroundColor':"#75d0ff"});
+	});
+
+	$("#globalCancelButton").mousedown(function() {
+		$(this).css({'backgroundColor':"#9fe5ff"});
+	}).mouseup(function() {
+		$(this).css({'backgroundColor':"#75d0ff"});
+	});
+
 });
 
 function pushInfo(isGood,srcstr){

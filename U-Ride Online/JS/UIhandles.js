@@ -46,6 +46,7 @@ function getRideHandle(toStatus){
 		if (getRideStatus==0) {
 			$("#getRidePanel").slideDown();
 			getRideStatus = 1;
+			$("#globalCancelButton").fadeIn();
 		}
 	} else {
 		pushInfo(false,"getRideHandle Error : toStatus undefined.");
@@ -88,6 +89,7 @@ function giveRideHandle(toStatus){
 		if (giveRideStatus==0) {
 			$("#giveRidePanel").slideDown();
 			giveRideStatus = 1;
+			$("#globalCancelButton").fadeIn();
 		}
 	} else {
 		pushInfo(false,"giveRideHandle Error : toStatus undefined.");
