@@ -152,3 +152,19 @@ function myProfileCreditHandle(toStatus){
 		$("#myProfileCreditPanel").slideUp();
 	}
 }
+
+function aboutHandle(toStatus){
+	if (toStatus==1) {
+		$("#aboutPanel").slideDown();
+	} else {
+		$("#aboutPanel").slideUp();
+	}
+}
+
+function loginHandle(toStatus){
+	if (toStatus==1) {
+		$("#loginPanel").slideDown();
+	} else {
+		$("#loginPanel").slideUp();
+	}
+}

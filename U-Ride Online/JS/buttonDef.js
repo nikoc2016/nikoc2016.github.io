@@ -21,7 +21,7 @@ var averageRating = 100;
 $(document).ready(function(){
 	//Init Start
 
-	mainUIhandle(2);
+	loginHandle(1);
 
 	//MAIN UI BUTTONS
 	$("#homeIcon").mousedown(function() {
@@ -43,6 +43,11 @@ $(document).ready(function(){
 	$("#myProfileButton").mousedown(function() {
 		mainOptionsHandle(0);
 		myProfileHandle(1);
+	});
+
+	$("#aboutButton").mousedown(function() {
+		mainOptionsHandle(0);
+		aboutHandle(1);
 	});
 
 	$("#Cancel").mousedown(function() {
@@ -96,6 +101,7 @@ $(document).ready(function(){
 			giveRidePassengerHandle(0);
 			mainUIhandle(2);
 			totalMilelage += travelDistance;
+			credits += creditEarn;
 			pushInfo(true,"Thank you for giving a Ride! Credits Earned: " + Math.round(creditEarn));
 		} else {
 			giveRidePassengerHandle(1);
@@ -160,4 +166,24 @@ $(document).ready(function(){
 				);
 		}
 	});
+
+	//About Buttons
+	$("#aboutQuitButton").mousedown(function(){
+		aboutHandle(0);
+		mainUIhandle(2);
+	});
+
+	//Login Button
+	$("#loginButton").mousedown(function(){
+		username = $("#loginName").val();
+		loginHandle(0);
+		mainUIhandle(2);
+	});
+
+	$("#logoffButton").mousedown(function(){
+		mainOptionsHandle(0);
+		mainUIhandle(0);
+		loginHandle(1);
+	});
+
 });
