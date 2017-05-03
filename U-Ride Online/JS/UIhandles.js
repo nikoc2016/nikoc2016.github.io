@@ -48,7 +48,7 @@ function getRideHandle(toStatus){
 			getRideStatus = 1;
 		}
 	} else {
-		pushInfo(false,"giveRideHandle Error : toStatus undefined.");
+		pushInfo(false,"getRideHandle Error : toStatus undefined.");
 	}
 }
 
@@ -64,10 +64,10 @@ function getRideDriverHandle(toStatus){
 			//console.log(data);
 			$("#getRiderDriverImagePic").attr("src",data.results[0].picture.large);
 			$("#getRideDriverInfo").html(
-				"Driver Found! </br></br>" + 
+				"Available Driver! </br></br>" + 
 				data.results[0].name.first.toUpperCase() + " " + data.results[0].name.last.toUpperCase() + "</br>" +
 				"Tel: " + data.results[0].cell + "</br>" +
-				"Overall Rating : " + Math.floor(Math.random() * 100) + "/100" + "</br>" +
+				"Driver Skill Rating : " + Math.floor(Math.random() * 100) + "/100" + "</br>" +
 				"Credits Needed : " + Math.floor(travelDistance/100) + "/" + credits
 				);
 			$("#getRideDriverPanel").fadeIn();
@@ -75,5 +75,80 @@ function getRideDriverHandle(toStatus){
 	});
 	} else {
 		pushInfo(false,"getRideDriverHandle Error : toStatus undefined.");
+	}
+}
+
+function giveRideHandle(toStatus){
+	if (toStatus==0) {
+		if (giveRideStatus==1) {
+			$("#giveRidePanel").slideUp();
+			giveRideStatus = 0;
+		}
+	} else if (toStatus==1){
+		if (giveRideStatus==0) {
+			$("#giveRidePanel").slideDown();
+			giveRideStatus = 1;
+		}
+	} else {
+		pushInfo(false,"giveRideHandle Error : toStatus undefined.");
+	}
+}
+
+function giveRidePassengerHandle(toStatus){
+	if (toStatus==0) {
+		$("#giveRidePassengerPanel").fadeOut("fast");
+	} else if (toStatus==1) {
+		$("#giveRidePassengerPanel").fadeOut("fast");
+		$.ajax({
+			url: 'https://randomuser.me/api/',
+			dataType: 'json',
+			success: function(data) {
+			//console.log(data);
+			creditEarn = Math.floor(travelDistance/100*Math.random());
+			$("#giveRidePassengerImagePic").attr("src",data.results[0].picture.large);
+			$("#giveRidePassengerInfo").html(
+				"Available Passenger! </br>" + 
+				data.results[0].name.first.toUpperCase() + " " + data.results[0].name.last.toUpperCase() + "</br>" +
+				"Passenger attitude rating : " + Math.floor(Math.random() * 100) + "/100" + "</br>" +
+				"Credits Earn : " + creditEarn + "/" + Math.floor(travelDistance/100) + "</br>"
+				);
+			if (creditEarn < Math.floor(travelDistance/100) * (1/3)) {
+				$("#giveRidePassengerInfo").append("Need a Short Ride");
+			} else if (creditEarn < Math.floor(travelDistance/100) * (2/3)){
+				$("#giveRidePassengerInfo").append("Need a Long Ride");
+			} else {
+				$("#giveRidePassengerInfo").append("Need a Full Ride");
+			}
+			$("#giveRidePassengerPanel").fadeIn();
+		}
+	});
+	} else {
+		pushInfo(false,"giveRideDriverHandle Error : toStatus undefined.");
+	}
+}
+
+function myProfileHandle(toStatus){
+	if (toStatus==1)	{
+		$("#myProfilePanel").slideDown();
+		$("#myProfileButtonPanel").fadeIn();
+		$("#myProfilePanel p").html(
+			username + "</br></br>" +
+			"Available Credits : " + credits + "</br>" +
+			"Traveled Distance : " + totalMilelage  + " m.</br>" +
+			"Average Rating : " + averageRating + "/100 </br>"
+		);
+	} else {
+		$("#myProfilePanel").slideUp();
+		$("#myProfileButtonPanel").fadeOut();
+	}
+}
+
+function myProfileCreditHandle(toStatus){
+	if (toStatus==1) {
+		creditStatus = 1;
+		$("#myProfileCreditPanel").slideDown();
+	} else {
+		creditStatus = 0;
+		$("#myProfileCreditPanel").slideUp();
 	}
 }

@@ -35,6 +35,7 @@ function initMap() {
   							map: map
   						});
   						$("#getFromBox").val(results[1].formatted_address);
+              $("#giveFromBox").val(results[1].formatted_address);
   					} else {
   						$("#getFromBox").val("US");
   					}
@@ -65,7 +66,7 @@ function clearMarkers(){
 	if (marker2) marker2.setMap(null);
 }
 
-function drawPath(fromDest, toDest){
+function drawPath(fromDest, toDest, isGet){
 	if (fromDest != "" && toDest != "") {
     clearMarkers();
 		directionsService.route({
@@ -77,9 +78,15 @@ function drawPath(fromDest, toDest){
 				directionsDisplay.setDirections(response);
 				travelDistance = response.routes[0].legs[0].distance.value;
 				pushInfo(true, "Distance: " + travelDistance + " Meters");
-				getRideDriverHandle(1);
+        if (isGet)
+				  getRideDriverHandle(1);
+        else
+          giveRidePassengerHandle(1);
 			} else {
-				getRideDriverHandle(0);
+        if (isGet)
+          getRideDriverHandle(0);
+        else
+          giveRidePassengerHandle(0);
 				pushInfo(false, 'Directions request failed due to ' + status);
 			}
 		});
