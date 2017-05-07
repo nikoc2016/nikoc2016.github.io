@@ -1,0 +1,103 @@
+html{
+	background-color:black;
+	color:white;
+}
+
+a:link, a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: #AAAAAA;
+}
+
+#logoPIC{
+	display: none;
+}
+
+#post{
+	display: none;
+}
+
+.postIMG {
+  max-width: 100%;
+  transition: all 0.3s;
+  border: 0px solid #dadada;
+  border-radius: 7px;
+}
+.postIMG:hover{
+  transform: scale(1.05);
+  outline: none;
+}
+
+.indexButton{
+	float:left;
+	border: 2px solid white;
+	width: 120px;
+	height: 30px;
+	margin-top: 50px;
+	margin-left: 30px;
+	text-align: center;
+	padding-top: 2px;
+	display: none;
+}
+.flying{
+	float: left;
+}
+.headerBlock{
+	border: 2px solid white;
+	width: 936px;
+	height: 80px;
+	font-size: 40px;
+}
+
+nav{
+	border: 2px solid white;
+	margin-top:50px;
+	height:300px;
+	width:200px;
+}
+.navCaption{
+	padding-top:7px;
+	color: #AAAABB;
+	width:200px;
+	height:43px;
+	text-align: center;
+	font-size:25px;
+}
+.navOption{
+	padding-top:13px;
+	width:200px;
+	height:37px;
+	text-align: center;
+	font-size:18px;
+}
+
+#drawArea{
+	width:940px;
+	margin-left: 0px;
+	margin-top: 0px;
+}
+
+.contentPost{
+	border: 2px solid white;
+	width:702px;
+	margin-top:50px;
+	margin-left:30px;
+	text-align: center;
+}
+
+#snakePad{
+	width:500px;
+	height:500px;
+	margin-left:101px;
+	border: 1px solid white;
+}
+
+.snakePixel{
+	width:10px;
+	height:10px;
+	float:left;
+	background-color:white;
+}
