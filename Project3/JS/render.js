@@ -5,13 +5,8 @@ $(document).ready(function(){
 function loadPage(pageName){
 
 	$("#mainDisplayPanel").slideUp();
-	$("#mainDisplayCtx").slideUp();
-
-	$("#mainDisplayCtx").load("PAGES/" + pageName, function(){
-		$("#mainDisplayPanel").css({"height":$("#mainDisplayCtx").height()});
-		$("#mainDisplayPanel").slideDown();
-		$("#mainDisplayCtx").slideDown();
-	});
+	$("#mainDisplayCtx").load("PAGES/" + pageName);
+	$("#mainDisplayPanel").slideDown();
 }
 
 $(window).resize(function(){
