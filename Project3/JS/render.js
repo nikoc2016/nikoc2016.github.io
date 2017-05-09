@@ -1,22 +1,22 @@
 $(document).ready(function(){
 	loadPage("page0.html");
 
-	$("#navHome").onclick(function(){
+	$("#navHome").click(function(){
 		loadPage("page0.html");
 	});
-	$("#navUnity").onclick(function(){
+	$("#navUnity").click(function(){
 		loadPage("page1.html");
 	});
-	$("#navUnreal").onclick(function(){
+	$("#navUnreal").click(function(){
 		loadPage("page2.html");
 	});
-	$("#navSnake").onclick(function(){
+	$("#navSnake").click(function(){
 		loadPage("page3.html");
 	});
-	$("#navJS").onclick(function(){
+	$("#navJS").click(function(){
 		loadPage("page4.html");
 	});
-	$("#navAPI").onclick(function(){
+	$("#navAPI").click(function(){
 		loadPage("page5.html");
 	});
 });
