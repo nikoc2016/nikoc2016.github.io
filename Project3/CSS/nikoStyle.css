@@ -192,12 +192,12 @@ nav{
 }
 
 a:link, a:visited {
-    color: white;
+    color: #CCFFCC;
     text-decoration: none;
 }
 
 a:hover, a:active {
-    color: #AAAAAA;
+    color: red;
 }
 
 img{
