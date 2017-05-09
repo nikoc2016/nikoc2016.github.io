@@ -10,22 +10,22 @@
 	<script src="JS/snake.js"></script>
 	<script src="JS/backToBeginning.js"></script>
 </head>
+
 <body>
 	<header>
+
 		<!-- BACK GROUND ANIMATION -->
 		<canvas id="myRainPad"></canvas>
-
-		<!-- BIG LOGO ANIMATION -->
-		<div id="headerPanel" class="nkBeam">
-			<div class="nkScreen">
-			</div>
-		</div>
-		<div id="headerPanelCtx">
-			<pre id="bigLOGO" onmouseover="changeLOGO(2)" onmouseleave="changeLOGO(1)">
-			</pre>
-		</div>
-
 	</header>
+
+	<!-- BIG LOGO ANIMATION -->
+	<div id="headerPanel" class="nkBeam">
+		<div class="nkScreen">
+		</div>
+	</div>
+	<div id="headerPanelCtx">
+	<pre id="bigLOGO" onmouseover="changeLOGO(2)" onmouseleave="changeLOGO(1)"></pre>
+	</div>
 
 	<div id="mainArea">
 
@@ -43,6 +43,10 @@
 		<!-- NAV BUTTON PANELS -->
 			<div id="navPanelLayer">
 
+				<div class="nkBeam navOptionsPanel">
+					<div class="nkScreen">
+					</div>
+				</div>
 				<div class="nkBeam navOptionsPanel">
 					<div class="nkScreen">
 					</div>
@@ -88,6 +92,9 @@
 				</div>
 				<div id="navAPI" class="navOptionsText">
 					AJAX + API
+				</div>
+				<div id="navOut" class="navOptionsText">
+					Sign Out
 				</div>
 			</div>
 		</nav>

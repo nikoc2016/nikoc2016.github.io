@@ -18,9 +18,11 @@ function changeLOGO(logoType=1){
 	if (logoType==1) {
 		clearInterval(animation);
 		animation = setInterval(animateText,100);
+		$("#headerPanel div").css({"backgroundColor":"#6ceda7"});
 	} else if (logoType==2){
 		clearInterval(animation);
 		animation = setInterval(animateM4A1,50);
+		$("#headerPanel div").css({"backgroundColor":"#6cbaa7"});
 	}
 }
 

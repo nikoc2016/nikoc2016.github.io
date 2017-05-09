@@ -1,7 +1,27 @@
+var mainUIStatus = 0; //0 - CG Only, 1 - Menu
+
 $(document).ready(function(){
+
+	updateMainUI();
+
 	loadPage("page0.html");
 
 	setInterval(resizeFooter, 10);
+
+	$("#bigLOGO").click(function(){
+		if (mainUIStatus==0){
+			changeLOGO(1);
+			mainUIStatus=1;
+			updateMainUI();
+		}
+	});
+
+	$("#navOut").click(function(){
+		if (mainUIStatus==1){
+			mainUIStatus=0;
+			updateMainUI();
+		}
+	});
 
 	$("#navHome").click(function(){
 		loadPage("page0.html");
@@ -19,7 +39,7 @@ $(document).ready(function(){
 		loadPage("page4.html");
 	});
 	$("#navAPI").click(function(){
-		loadPage("page5.html");
+		window.open("../U-Ride%20Online/index.html");
 	});
 });
 
@@ -33,7 +53,7 @@ function loadPage(pageName){
 	} else {
 		$("#mainDisplayCtx").load("PAGES/" + pageName);
 	}
-	$("#mainDisplayPanel").fadeIn("slow");
+	$("#mainDisplayPanel").fadeIn(1500);
 }
 
 $(window).resize(function(){
@@ -58,4 +78,26 @@ function loadSnake(){
 		}
 	}
 	if (engine.gameOn==false) snakeInit();
+}
+
+function updateMainUI(){
+	if (mainUIStatus == 0) {
+		$("#headerPanel").hide();
+		$("#headerPanelCtx").hide();
+		$("#mainArea").fadeOut("fast");
+		$("footer").fadeOut("fast");
+		$("#headerPanel").css({"top": ($(window).height() - $("#headerPanel").height())/2 });
+		$("#headerPanelCtx").css({"top": ($(window).height() - $("#headerPanelCtx").height())/2 });
+		$("#headerPanel").fadeIn(1500);
+		$("#headerPanelCtx").fadeIn(1500);
+	} else {
+		$("#headerPanel").hide();
+		$("#headerPanelCtx").hide();
+		$("#headerPanel").css({"top": "10px"});
+		$("#headerPanelCtx").css({"top": "10px"});
+		$("#headerPanel").fadeIn(1500);
+		$("#headerPanelCtx").fadeIn(1500);
+		$("#mainArea").fadeIn(1500);
+		$("footer").fadeIn(1500);
+	}
 }
