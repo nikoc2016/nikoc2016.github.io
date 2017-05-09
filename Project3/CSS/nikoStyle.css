@@ -60,7 +60,7 @@ body {
   width:900px;
   height:auto;
   left: 50%;
-  border:1px solid red;
+  /*border:1px solid red;*/
   margin-right: -50%;
   transform: translate(-50%, 0);
   text-align: center;

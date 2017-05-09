@@ -12,7 +12,7 @@ var myRain = {
   h : 0,
   minScale: 0.3,
   maxScale: 1,
-  maxFontSize: $(window).width() / 40,
+  maxFontSize: $(window).width() / 60,
   maxBGcolor: {
     r : "67",
     g : "99",
