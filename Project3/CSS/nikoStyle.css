@@ -190,3 +190,24 @@ nav{
   margin-right: -50%;
   transform: translate(-50%, 0)
 }
+
+a:link, a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: #AAAAAA;
+}
+
+img{
+  max-width: 100%;
+  transition: all 0.3s;
+  border: 0px solid #dadada;
+  border-radius: 7px;
+}
+
+img:hover{
+  transform: scale(1.05);
+  outline: none;
+}
