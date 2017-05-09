@@ -4,9 +4,9 @@ $(document).ready(function(){
 
 function loadPage(pageName){
 
-	$("#mainDisplayPanel").slideUp();
+	$("#mainDisplayPanel").fadeOut("slow");
 	$("#mainDisplayCtx").load("PAGES/" + pageName);
-	$("#mainDisplayPanel").slideDown();
+	$("#mainDisplayPanel").fadeIn("slow");
 }
 
 $(window).resize(function(){
