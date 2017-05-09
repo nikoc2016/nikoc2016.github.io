@@ -142,7 +142,7 @@ async function snakeGameOff(){
 		$(".snakePixel").css({"backgroundColor":"red"});
 		clearInterval(engine.looper);
 		await clearScreenCG(1);
-		$(".snakePixel").css({"backgroundColor":"white"});
+		$(".snakePixel").css({"backgroundColor":"#AAFFAA"});
 		snakeCG();
 	}
 }

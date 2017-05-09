@@ -209,3 +209,19 @@ img:hover{
   transform: scale(1.05);
   outline: none;
 }
+
+#snakePad{
+  width:500px;
+  height:500px;
+  margin-left:70px;
+  border: 1px solid white;
+  background-color:black;
+  opacity:0.9;
+}
+
+.snakePixel{
+  width:10px;
+  height:10px;
+  float:left;
+  background-color:#AAFFAA;
+}
