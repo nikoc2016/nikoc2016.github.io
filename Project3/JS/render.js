@@ -25,6 +25,14 @@ function loadPage(pageName){
 	$("#mainDisplayPanel").fadeOut("slow");
 	$("#mainDisplayCtx").load("PAGES/" + pageName);
 	$("#mainDisplayPanel").fadeIn("slow");
+
+	if ($("#mainDisplayCtx").height() > 690 ) {
+		$("#footerPanel").css({"top": $("#mainDisplayCtx").height() + 280});
+		$("#footerCtx").css({"top": $("#mainDisplayCtx").height() + 270});
+	} else {
+		$("#footerPanel").css({"top": 930});
+		$("#footerCtx").css({"top": 920});
+	}
 }
 
 $(window).resize(function(){

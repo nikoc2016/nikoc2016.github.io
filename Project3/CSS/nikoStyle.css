@@ -166,7 +166,6 @@ nav{
 #footerPanel{
   position:absolute;
   z-index:1;
-  bottom:10px;
   width:900px;
   height:30px;
   left: 50%;
@@ -179,7 +178,6 @@ nav{
   margin:0;
   position:absolute;
   z-index:2;
-  bottom:22px;
   height:30px;
 
   color: #AAFFAA;
