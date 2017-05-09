@@ -155,10 +155,6 @@ nav{
   text-align: center;
 }
 
-#mainDisplayPanel .nkScreen{
-  opacity:0.80;
-}
-
 #mainDisplayCtx{
   width:100%;
   height:auto;
