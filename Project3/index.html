@@ -1,12 +1,117 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>Niko's Project Final</title>
-	<link rel="stylesheet" type="text/css" href="nikoStyle.css">
+	<link rel="stylesheet" type="text/css" href="CSS/nikoStyle.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="myRain.js"></script>
+	<script src="JS/myRain.js"></script>
+	<script src="JS/render.js"></script>
+	<script src="JS/backToBeginning.js"></script>
 </head>
 <body>
-	<canvas id="myRainPad"></canvas>
+	<header>
+		<!-- BACK GROUND ANIMATION -->
+		<canvas id="myRainPad"></canvas>
+
+		<!-- BIG LOGO ANIMATION -->
+		<div id="headerPanel" class="nkBeam">
+			<div class="nkScreen">
+			</div>
+		</div>
+		<div id="headerPanelCtx">
+			<pre id="bigLOGO" onmouseover="changeLOGO(2)" onmouseleave="changeLOGO(1)">
+			</pre>
+		</div>
+
+	</header>
+
+	<div id="mainArea">
+
+		<nav>
+		<!-- HELLO WINDOW -->
+			<div id="navAnimatePanel" class="nkBeam">
+				<div class="nkScreen">
+				</div>
+			</div>
+			<div id="navAnimateCtx">
+				<pre id="navTitle">
+				</pre>
+			</div>
+
+		<!-- NAV BUTTON PANELS -->
+			<div id="navPanelLayer">
+
+				<div class="nkBeam navOptionsPanel">
+					<div class="nkScreen">
+					</div>
+				</div>
+				<div class="nkBeam navOptionsPanel">
+					<div class="nkScreen">
+					</div>
+				</div>
+				<div class="nkBeam navOptionsPanel">
+					<div class="nkScreen">
+					</div>
+				</div>
+				<div class="nkBeam navOptionsPanel">
+					<div class="nkScreen">
+					</div>
+				</div>
+				<div class="nkBeam navOptionsPanel">
+					<div class="nkScreen">
+					</div>
+				</div>
+				<div class="nkBeam navOptionsPanel">
+					<div class="nkScreen">
+					</div>
+				</div>
+			</div>
+
+		<!-- NAV BUTTON TEXTS -->
+			<div id="navTextLayer">
+				<div id="navHome" class="navOptionsText">
+					HOME
+				</div>
+				<div id="navAbout" class="navOptionsText">
+					Unity 3D
+				</div>
+				<div id="navAbout" class="navOptionsText">
+					Unreal SDK
+				</div>
+				<div id="navAbout" class="navOptionsText">
+					Snake Game
+				</div>
+				<div id="navAbout" class="navOptionsText">
+					JavaScript
+				</div>
+				<div id="navAbout" class="navOptionsText">
+					AJAX + API
+				</div>
+			</div>
+		</nav>
+
+		<div id="mainDisplayZone">
+
+			<div id="mainDisplayPanel" class="nkBeam">
+				<div class="nkScreen">
+				</div>
+			</div>
+			<div id="mainDisplayCtx">
+			</div>
+
+		</div>
+
+	</div>
+
+	<footer>
+		<div id="footerPanel" class="nkBeam">
+			<div class="nkScreen">
+			</div>
+		</div>
+		<div id="footerCtx">
+			<p>NikoC 2017 Production</p>
+		</div>
+	</footer>
 </body>
 </html>

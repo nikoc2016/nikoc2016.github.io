@@ -1,0 +1,52 @@
+a:link, a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: purple;
+}
+
+hr{
+	border-color:#7fbb9f;
+}
+.blockStyling{
+	background-color:black;
+    color:#8fd9af;
+    border: 5px Groove;
+    border-color:#b6d9c5;
+    font-size:15px;
+}
+.middleText{
+	text-align: center;
+}
+.floating{
+	float:left;
+}
+html{
+	height: 100%;
+	background-color: black;
+}
+
+article{
+	color:#b6d9c5;
+}
+article:hover{
+	color:white;
+}
+h1{
+	font-size:18px;
+}
+
+img {
+  max-width: 100%;
+  transition: all 0.3s;
+  border: 2px solid #dadada;
+  border-radius: 7px;
+}
+img:hover{
+  transform: scale(1.1);
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}
