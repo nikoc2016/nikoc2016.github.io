@@ -11,7 +11,15 @@ $(document).ready(function(){
 		loadPage("page2.html");
 	});
 	$("#navSnake").click(function(){
-		loadPage("page3.html");
+		loadPage("page3.html",function(){
+			for(var y=0;y<50;y++){
+				for(var x=0;x<50;x++){
+					$("#snakePad").append("<div class='snakePixel' id='PIXEL-" + x + "-" + y + "'></div>");
+					drawPixel(x,y,0); //Make It Black
+				}
+			}
+			snakeInit();
+		});
 	});
 	$("#navJS").click(function(){
 		loadPage("page4.html");
