@@ -1,11 +1,19 @@
 $(document).ready(function(){
-	$("#mainDisplayCtx").load("PAGES/HOME.html");
-	$("#mainDisplayPanel").css({"height":$("#mainDisplayCtx").height()});
-	$("#mainDisplayPanel").fadeIn();
-	$("#mainDisplayCtx").fadeIn();
+	loadPage("HOME.html");
 });
+
+function loadPage(pageName){
+
+	$("#mainDisplayPanel").slideUp();
+	$("#mainDisplayCtx").slideUp();
+
+	$("#mainDisplayCtx").load("PAGES/pageName", {}, function(){
+		$("#mainDisplayPanel").css({"height":$("#mainDisplayCtx").height()});
+		$("#mainDisplayPanel").slideDown();
+		$("#mainDisplayCtx").slideDown();
+	});
+}
 
 $(window).resize(function(){
   myRain.resizeCanvas();
-
 });
