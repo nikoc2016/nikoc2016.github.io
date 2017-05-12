@@ -18,12 +18,14 @@ var password = "123";
 var totalMilelage = 0;
 var averageRating = 100;
 
+var aboutCurrentPage = 1;
+
 $(document).ready(function(){
 	//Init Start
 
 	loginHandle(1);
 
-	//MAIN UI BUTTONS
+	//MAIN UI BUTTON
 	$("#homeIcon").mousedown(function() {
 		mainUIhandle(1);
 		mainOptionsHandle(1);
@@ -168,6 +170,10 @@ $(document).ready(function(){
 	});
 
 	//About Buttons
+	$("#aboutNextButton").mousedown(function() {
+		aboutHandle(2);
+	});
+
 	$("#aboutQuitButton").mousedown(function(){
 		aboutHandle(0);
 		mainUIhandle(2);

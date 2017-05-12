@@ -155,9 +155,64 @@ function myProfileCreditHandle(toStatus){
 	}
 }
 
+//0-Close 1-First Page 2-Next Page
 function aboutHandle(toStatus){
 	if (toStatus==1) {
 		$("#aboutPanel").slideDown();
+		aboutCurrentPage = 1;
+		$("#aboutContent").html(
+			"U-Ride is a multi-platform e-commerce application. </br></br>" +
+			"By using U-Ride Credits, you can get a ride or give a ride. </br></br>" +
+			"U-Ride Credits are tradable, but selling it only worth 2/3 of buying it</br></br>" +
+			"U-Ride is created for protecting us from air pollution.</br></br>" +
+			"chenglin.lu217@myci.csuci.edu</br>" +
+			"jason.lara798@myci.csuci.edu"
+		);
+	} else if (toStatus==2) {
+
+		if (aboutCurrentPage == 1) {
+			aboutCurrentPage = 2;
+			$("#aboutContent").html(
+				"Get A Ride" + "</br></br>" +
+				"1. Click the “U” from the home screen" + "</br></br>" +
+				"2. Then click on get a ride" + "</br></br>" +
+				"3. If your location services are enabled, there is no need to enter your location in “From” field" + "</br></br>" +
+				"4. Enter your destination in the “To” field" + "</br></br>" +
+				"5. Click “Get me a Ride”" + "</br></br>" +
+				"6. You will have the option to “Accept”,” Next” or “Quit”"
+			);
+		} else if (aboutCurrentPage == 2) {
+			aboutCurrentPage = 3;
+			$("#aboutContent").html(
+				"Give A Ride" + "</br></br>" +
+				"1.Click the “U” from the home screen" + "</br></br>" +
+				"2.Then click on “Give” a ride" + "</br></br>" +
+				"3.If your location services are enabled, there is no need to enter your location in “From” field" + "</br></br>" +
+				"4.Enter your destination in the “To” field" + "</br></br>" +
+				"5.Click “Carpool It!”" + "</br></br>" +
+				"6.You will have the option to “Accept”, “Next” or “Quit”"
+			);
+		} else if (aboutCurrentPage == 3) {
+			aboutCurrentPage = 4;
+			$("#aboutContent").html(
+				"View your Account" + "</br></br>" +
+				"1.Click the “U” from the home screen" + "</br></br>" +
+				"2.Click “My Profile”"
+			);
+		} else if (aboutCurrentPage == 4) {
+			aboutCurrentPage = 5;
+			$("#aboutContent").html(
+				"Purchasing or Selling credits" + "</br></br>" +
+				"Click the “U” from the home screen" + "</br></br>" +
+				"Click “My Profile”" + "</br></br>" +
+				"Click “Credits”" + "</br></br>" +
+				"Enter amount" + "</br></br>" +
+				"Click either “Sell” or “Buy”"
+			);
+		} else {
+			aboutHandle(1);
+		}
+
 	} else {
 		$("#aboutPanel").slideUp();
 	}
