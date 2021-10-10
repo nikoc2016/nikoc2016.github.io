@@ -214,6 +214,7 @@ function prepare_new_question() {
 	renew_operator()
 	renew_nums()
 	render_question()
+	$("#answer_input").focus()
 }
 
 function complete_question() {
