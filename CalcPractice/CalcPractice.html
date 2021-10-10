@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="NikoC">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>CalcPractice</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="col-lg-8 mx-auto p-3 py-md-5">
+      <main>
+        <div class="col-md-12 text-center">
+            <h1 id="question_text">JAVASCRIPT FAILURE</h1>
+        </div>
+        <input id="answer_input" type="text" class="form-control"  placeholder="0">
+        </br>
+        <div class="col-md-12 text-center">
+            <button id="confirm_button" type="button" class="btn btn-primary btn-lg btn-block">确认答案</button>
+        </div>
+
+        </br>
+
+        <div class="col-md-12 text-center">
+            <h6 id="stat_previous">上题: 1+1 正确答案: 2 您的答案: 3 结论: 错误</h1>
+            <h6 id="stat_all">总数: 0 正确: 0 错误:0 正确率: 0%</h1>
+        </div>
+
+        </br>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">1.整数长度</span>
+          </div>
+          <input id="FirstIntMinDigits" type="number" class="form-control" placeholder="Min" aria-label="FirstIntMinDigits" aria-describedby="FirstIntMinDigits">
+          <span class="input-group-text" id="basic-addon2">-</span>
+          <input id="FirstIntMaxDigits" type="number" class="form-control" placeholder="Max" aria-label="FirstIntMaxDigits" aria-describedby="FirstIntMaxDigits">
+          <span class="input-group-text" id="basic-addon2">小数长度</span>
+          <input id="FirstDecMinDigits" type="number" class="form-control" placeholder="Min" aria-label="FirstDecMinDigits" aria-describedby="FirstIntMinDigits">
+          <span class="input-group-text" id="basic-addon2">-</span>
+          <input id="FirstDecMaxDigits" type="number" class="form-control" placeholder="Max" aria-label="FirstDecMaxDigits" aria-describedby="FirstIntMaxDigits">
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">2.整数长度</span>
+          </div>
+          <input id="FinalIntMinDigits" type="number" class="form-control" placeholder="Min" aria-label="FinalIntMinDigits" aria-describedby="FirstIntMinDigits">
+          <span class="input-group-text" id="basic-addon2">-</span>
+          <input id="FinalIntMaxDigits" type="number" class="form-control" placeholder="Max" aria-label="FinalIntMaxDigits" aria-describedby="FirstIntMaxDigits">
+          <span class="input-group-text" id="basic-addon2">小数长度</span>
+          <input id="FinalDecMinDigits" type="number" class="form-control" placeholder="Min" aria-label="FirstDecMinDigits" aria-describedby="FirstIntMinDigits">
+          <span class="input-group-text" id="basic-addon2">-</span>
+          <input id="FinalDecMaxDigits" type="number" class="form-control" placeholder="Max" aria-label="FirstDecMaxDigits" aria-describedby="FirstIntMaxDigits">
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">回答小数精度</span>
+          </div>
+          <input id="answer_precision" type="number" class="form-control" placeholder="-1=答全部小数; 0=不答小数; 1, 2.." aria-label="answer_precision" aria-describedby="answer_precision">
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">限时秒数</span>
+          </div>
+          <input id="answer_time_limit" type="number" class="form-control" placeholder="0=禁用" aria-label="answer_time_limit" aria-describedby="answer_time_limit">
+        </div>
+
+        <div class="form-check form-switch">
+          <input id="switch_add" class="form-check-input" type="checkbox" checked>
+          <label class="form-check-label" for="switch_add">加法</label>
+        </div>
+
+        <div class="form-check form-switch">
+          <input id="switch_minus" class="form-check-input" type="checkbox" checked>
+          <label class="form-check-label" for="switch_minus">减法</label>
+        </div>
+
+        <div class="form-check form-switch">
+          <input id="switch_times" class="form-check-input" type="checkbox" checked>
+          <label class="form-check-label" for="flexSwitchCheckChecked">乘法</label>
+        </div>
+
+
+        <div class="form-check form-switch">
+          <input id="switch_divide" class="form-check-input" type="checkbox" checked>
+          <label class="form-check-label" for="flexSwitchCheckChecked">除法</label>
+        </div>
+
+      </main>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/exact-math.js"></script>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/CalcPractice.js"></script>
+  </body>
+</html>
