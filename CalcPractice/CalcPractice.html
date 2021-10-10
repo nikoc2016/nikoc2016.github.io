@@ -17,6 +17,8 @@
       <main>
         <div class="col-md-12 text-center">
             <h1 id="question_text">JAVASCRIPT FAILURE</h1>
+            <h6 id="question_precision_hint"></h6>
+            <h6 id="question_timeout"></h6>
         </div>
         <input id="answer_input" type="text" class="form-control"  placeholder="0">
         </br>
@@ -32,6 +34,18 @@
         </div>
 
         </br>
+
+        <div class="col-md-12 text-center">
+            <h1>预设模式</h1>
+            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+              <button id="mode_discount" type="button" class="btn btn-secondary">比例-超市打折</button>
+              <button id="mode_loan" type="button" class="btn btn-secondary">比例-贷款</button>
+              <button id="mode_import" type="button" class="btn btn-secondary">乘法-货品批发</button>
+              <button id="mode_grocery" type="button" class="btn btn-secondary">加减法-市场买菜</button>
+              <button id="mode_bill_split" type="button" class="btn btn-secondary">除法-吃饭AA</button>
+              <button id="mode_5secs" type="button" class="btn btn-secondary">综合-5秒模式</button>
+            </div>
+        </div>
 
         <div class="col-md-12 text-center">
             <h1>数字1设置</h1>
@@ -93,6 +107,10 @@
             <span class="input-group-text" id="basic-addon1">限时秒数</span>
           </div>
           <input id="answer_time_limit" type="number" class="form-control" placeholder="0=禁用" aria-label="answer_time_limit" aria-describedby="answer_time_limit">
+        </div>
+
+        <div class="col-md-12 text-center">
+            <h1>运算符设置</h1>
         </div>
 
         <div class="form-check form-switch">

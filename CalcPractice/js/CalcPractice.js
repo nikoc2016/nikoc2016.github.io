@@ -2,6 +2,9 @@ var first_num = 0.0
 var final_num = 0.0
 var true_answer = 0.0
 var user_answer = 0.0
+var precision_level = 0
+var timeout_secs = 0
+var timeout_meter = null
 var operator = "+"
 
 var stat_total_questions = 0
@@ -211,10 +214,38 @@ function render_question() {
 
 function prepare_new_question() {
 	$("#answer_input").val("")
+
+	$("#question_timeout").html("")
+	clearTimeout(timeout_meter)
+
+	precision_level = $("#answer_precision").val().toString()
+
+	if (precision_level < 0) {
+		$("#question_precision_hint").html("小数设置:回答完整小数")
+	} else if (precision_level > 0) {
+		$("#question_precision_hint").html("小数设置:仅回答" + precision_level + "位小数.")
+	} else {
+		$("#question_precision_hint").html("小数设置:不回答小数.")
+	}
 	renew_operator()
 	renew_nums()
 	render_question()
 	$("#answer_input").focus()
+
+	if ($("#answer_time_limit").val() > 0) {
+		timeout_secs = Math.floor($("#answer_time_limit").val()) + 1
+		timeout_handler()
+	}
+}
+
+function timeout_handler() {
+	if (timeout_secs <= 0) {
+		complete_question()
+	} else {
+		timeout_secs -= 1
+		$("#question_timeout").html("剩余时间: " + timeout_secs + "秒")
+		timeout_meter = setTimeout(()=>{timeout_handler()}, 1000)
+	}
 }
 
 function complete_question() {
@@ -227,12 +258,11 @@ function complete_question() {
 
 	var answer_to_compare = 0
 
-	var answer_precision = $("#answer_precision").val()
-	if (answer_precision < 0) {
+	if (precision_level < 0) {
 		answer_to_compare = true_answer
 	}
-	else if (answer_precision > 0) {
-		answer_to_compare = exactMath.floor(true_answer, -1 * answer_precision)
+	else if (precision_level > 0) {
+		answer_to_compare = exactMath.floor(true_answer, -1 * precision_level)
 	}
 	else {
 		answer_to_compare = exactMath.floor(true_answer, 1)
@@ -273,4 +303,155 @@ $(document).ready(()=>{
 	$("#confirm_button").click(()=>{
 		complete_question()
 	})
+
+	$("#mode_discount").click(()=>{
+		stat_total_questions = 0
+		stat_correct_questions = 0
+
+		$("#FirstIntMinDigits").val(2)
+		$("#FirstIntMaxDigits").val(4)
+		$("#FirstDecMinDigits").val(0)
+		$("#FirstDecMaxDigits").val(0)
+
+		$("#FinalIntMinDigits").val(0)
+		$("#FinalIntMaxDigits").val(0)
+		$("#FinalDecMinDigits").val(1)
+		$("#FinalDecMaxDigits").val(1)
+
+		$("#answer_precision").val(0)
+		$("#answer_time_limit").val(0)
+
+		$("#switch_add").attr("checked", false)
+		$("#switch_minus").attr("checked", false)
+		$("#switch_times").attr("checked", true)
+		$("#switch_divide").attr("checked", false)
+
+		prepare_new_question()
+	})
+
+	$("#mode_loan").click(()=>{
+		stat_total_questions = 0
+		stat_correct_questions = 0
+
+		$("#FirstIntMinDigits").val(2)
+		$("#FirstIntMaxDigits").val(3)
+		$("#FirstDecMinDigits").val(0)
+		$("#FirstDecMaxDigits").val(0)
+
+		$("#FinalIntMinDigits").val(0)
+		$("#FinalIntMaxDigits").val(1)
+		$("#FinalDecMinDigits").val(1)
+		$("#FinalDecMaxDigits").val(2)
+
+		$("#answer_precision").val(2)
+		$("#answer_time_limit").val(0)
+
+		$("#switch_add").attr("checked", false)
+		$("#switch_minus").attr("checked", false)
+		$("#switch_times").attr("checked", true)
+		$("#switch_divide").attr("checked", false)
+
+		prepare_new_question()
+	})
+
+	$("#mode_import").click(()=>{
+		stat_total_questions = 0
+		stat_correct_questions = 0
+
+		$("#FirstIntMinDigits").val(2)
+		$("#FirstIntMaxDigits").val(3)
+		$("#FirstDecMinDigits").val(0)
+		$("#FirstDecMaxDigits").val(0)
+
+		$("#FinalIntMinDigits").val(2)
+		$("#FinalIntMaxDigits").val(2)
+		$("#FinalDecMinDigits").val(0)
+		$("#FinalDecMaxDigits").val(0)
+
+		$("#answer_precision").val(0)
+		$("#answer_time_limit").val(0)
+
+		$("#switch_add").attr("checked", false)
+		$("#switch_minus").attr("checked", false)
+		$("#switch_times").attr("checked", true)
+		$("#switch_divide").attr("checked", false)
+
+		prepare_new_question()
+	})
+
+	$("#mode_grocery").click(()=>{
+		stat_total_questions = 0
+		stat_correct_questions = 0
+
+		$("#FirstIntMinDigits").val(1)
+		$("#FirstIntMaxDigits").val(2)
+		$("#FirstDecMinDigits").val(1)
+		$("#FirstDecMaxDigits").val(2)
+
+		$("#FinalIntMinDigits").val(1)
+		$("#FinalIntMaxDigits").val(2)
+		$("#FinalDecMinDigits").val(1)
+		$("#FinalDecMaxDigits").val(2)
+
+		$("#answer_precision").val(2)
+		$("#answer_time_limit").val(0)
+
+		$("#switch_add").attr("checked", true)
+		$("#switch_minus").attr("checked", false)
+		$("#switch_times").attr("checked", false)
+		$("#switch_divide").attr("checked", false)
+
+		prepare_new_question()
+	})
+
+	$("#mode_bill_split").click(()=>{
+		stat_total_questions = 0
+		stat_correct_questions = 0
+
+		$("#FirstIntMinDigits").val(2)
+		$("#FirstIntMaxDigits").val(3)
+		$("#FirstDecMinDigits").val(0)
+		$("#FirstDecMaxDigits").val(0)
+
+		$("#FinalIntMinDigits").val(1)
+		$("#FinalIntMaxDigits").val(1)
+		$("#FinalDecMinDigits").val(0)
+		$("#FinalDecMaxDigits").val(0)
+
+		$("#answer_precision").val(0)
+		$("#answer_time_limit").val(0)
+
+		$("#switch_add").attr("checked", false)
+		$("#switch_minus").attr("checked", false)
+		$("#switch_times").attr("checked", false)
+		$("#switch_divide").attr("checked", true)
+
+		prepare_new_question()
+	})
+
+	$("#mode_5secs").click(()=>{
+		stat_total_questions = 0
+		stat_correct_questions = 0
+
+		$("#FirstIntMinDigits").val(2)
+		$("#FirstIntMaxDigits").val(2)
+		$("#FirstDecMinDigits").val(0)
+		$("#FirstDecMaxDigits").val(0)
+
+		$("#FinalIntMinDigits").val(1)
+		$("#FinalIntMaxDigits").val(1)
+		$("#FinalDecMinDigits").val(0)
+		$("#FinalDecMaxDigits").val(0)
+
+		$("#answer_precision").val(0)
+		$("#answer_time_limit").val(5)
+
+		$("#switch_add").attr("checked", true)
+		$("#switch_minus").attr("checked", true)
+		$("#switch_times").attr("checked", true)
+		$("#switch_divide").attr("checked", true)
+
+		prepare_new_question()
+	})
+
 })
