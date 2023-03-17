@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <style>
+            .chess-board { border-spacing: 0; border-collapse: collapse; }
+            .chess-board th { padding: .5em; }
+            .chess-board td { border: 1px solid; width: 2em; height: 2em; }
+            .chess-board .light { background: #eee; }
+            .chess-board .dark { background: #000; }
+            .red-text {color: red;}
+            .green-text {color:green;}
+            #prompt {font-size: 50px;}
+        </style>
+    </head>
+    <body>
+    	<table id="the_board" class="chess-board"></table>
+    	<div id="result" class=".green-text">Prompt:g2 Your Answer:h2</div>
+    	<div id="prompt">f4</div>
+    </body>
+    <script type="text/javascript">
+    	var previous_prompt="none";
+    	var previous_answer="none";
+    	var current_prompt="none";
+
+    	$(function(){
+    		let show_headers = false;
+    		var cell_color = ["light", "dark"];
+    		
+    		// Letter Header Generation
+    		if (show_headers == true) {
+    			var letter_header_html = "<th></th>";
+    			for (let i = 0; i < 8; i++) {
+					const letter = String.fromCharCode(97 + i);
+					letter_header_html += `<th>${letter}</th>`;
+				}
+				letter_header_html = `<tr>${letter_header_html}</tr>`;
+				$('#the_board').append(letter_header_html);
+    		}
+
+    		// Each Rows
+    		for (let i = 0; i < 8; i++) {
+    			let row_html = "";
+    			if (show_headers == true) {
+    				row_html += `<th>${8-i}</th>`;
+    			} else {
+    				row_html += "<th></th>";
+    			}
+			    for (let j = 0; j < 8; j++) {
+			    	id = String.fromCharCode(97 + j) + (8 - i);
+					color = cell_color[(i + j) % 2];
+					row_html += `<td id="${id}" class="${color}"></td>`;
+				}
+				row_html = `<tr>${row_html}</tr>`;
+				$('#the_board').append(row_html);
+    		}
+
+    		// Init
+    		update(user_answer="none");
+
+    		// Register Events
+    		$(".light, .dark").click(function() {
+				update(this.id);
+			})
+    	})
+
+    	function update(user_answer) {
+    		// Define an array of the chess board letters and numbers
+			const letters = ["a", "b", "c", "d", "e", "f", "g", "h"];
+			const numbers = ["1", "2", "3", "4", "5", "6", "7", "8"];
+
+			// Generate a random index for each array
+			const randomLetterIndex = Math.floor(Math.random() * letters.length);
+			const randomNumberIndex = Math.floor(Math.random() * numbers.length);
+
+			// Use the random index to get a random letter and number from the arrays
+			const randomLetter = letters[randomLetterIndex];
+			const randomNumber = numbers[randomNumberIndex];
+
+			// Combine the random letter and number to create the random chess cell
+			const randomChessCell = randomLetter + randomNumber;
+
+    		previous_answer = user_answer;
+    		previous_prompt = current_prompt;
+    		current_prompt = randomChessCell;
+
+    		$('#result').html(`Prompt: ${previous_prompt} Your Answer: ${previous_answer}`);
+    		if (previous_answer == previous_prompt) {
+    			$("#result").removeClass().addClass("green-text");
+    		} else {
+    			$("#result").removeClass().addClass("red-text");
+    		}
+
+    		$('#prompt').html(current_prompt);
+    	}
+    </script>
+</html>
