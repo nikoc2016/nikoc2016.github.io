@@ -65,7 +65,7 @@
             // Register Events
             $('#answer').keypress(function(event) {
                 if (event.keyCode == 13) {
-                    update(user_answer=$("#answer").val());
+                    update(user_answer=$("#answer").val().toLowerCase());
                     $("#answer").val("").focus();
                 }
             });
