@@ -10,6 +10,7 @@
             .chess-board td { border: 1px solid; width: 2em; height: 2em; }
             .chess-board .light { background: #eee; }
             .chess-board .dark { background: #000; }
+            .chess-board .gold { background: gold; }
             .red-text {color: red;}
             .green-text {color:green;}
             #prompt {font-size: 50px;}
@@ -18,12 +19,13 @@
     <body>
     	<table id="the_board" class="chess-board"></table>
     	<div id="result" class=".green-text">Prompt:g2 Your Answer:h2</div>
-    	<div id="prompt">f4</div>
+    	<input id="answer" type="text">
     </body>
     <script type="text/javascript">
     	var previous_prompt="none";
     	var previous_answer="none";
     	var current_prompt="none";
+    	var current_prompt_color="none";
 
     	$(function(){
     		let show_headers = false;
@@ -61,9 +63,12 @@
     		update(user_answer="none");
 
     		// Register Events
-    		$(".light, .dark").click(function() {
-				update(this.id);
-			})
+    		$('#answer').keypress(function(event) {
+		        if (event.keyCode == 13) {
+		            update(user_answer=$("#answer").val());
+		            $("#answer").val("").focus();
+		        }
+		    });
     	})
 
     	function update(user_answer) {
@@ -84,7 +89,11 @@
 
     		previous_answer = user_answer;
     		previous_prompt = current_prompt;
+			$('#' + current_prompt).removeClass().addClass(current_prompt_color);
+
     		current_prompt = randomChessCell;
+    		current_prompt_color = $("#" + current_prompt).attr("class");
+    		$('#' + current_prompt).removeClass().addClass("gold");
 
     		$('#result').html(`Prompt: ${previous_prompt} Your Answer: ${previous_answer}`);
     		if (previous_answer == previous_prompt) {
@@ -92,8 +101,6 @@
     		} else {
     			$("#result").removeClass().addClass("red-text");
     		}
-
-    		$('#prompt').html(current_prompt);
     	}
     </script>
 </html>
